@@ -1,0 +1,1672 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-07 11:04-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: Ed-Tech/analytics/admin.py:24
+msgid "الإحصائيات"
+msgstr ""
+
+#: Ed-Tech/analytics/admin.py:71
+msgid "إحصائيات المعلم"
+msgstr ""
+
+#: Ed-Tech/analytics/admin.py:74
+msgid "مؤشرات الأداء"
+msgstr ""
+
+#: Ed-Tech/analytics/admin.py:77
+msgid "معلومات التحديث"
+msgstr ""
+
+#: Ed-Tech/analytics/admin.py:130
+msgid "معلومات المستخدم"
+msgstr ""
+
+#: Ed-Tech/analytics/admin.py:134 Ed-Tech/assessment/admin.py:98
+#: Ed-Tech/assessment/admin.py:143
+msgid "المعلومات الزمنية"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:12
+msgid "التاريخ"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:13
+msgid "إجمالي الوقت بالدقائق"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:14
+msgid "الوحدات المكتملة"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:15 Ed-Tech/assessment/models.py:176
+msgid "إجمالي النقاط"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:16
+msgid "متوسط مستوى الإتقان"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:19
+msgid "تحليل التعلم"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:20
+msgid "تحليلات التعلم"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:28
+msgid "إجمالي الطلاب"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:29
+msgid "الطلاب النشطين"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:30
+msgid "إجمالي الوحدات المنشأة"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:31
+msgid "معدل تفاعل الطلاب"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:32
+msgid "متوسط تقدم الطلاب"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:33
+msgid "آخر تحديث"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:36
+msgid "لوحة تحكم المعلم"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:37
+msgid "لوحات تحكم المعلمين"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:57
+msgid "مستوى السجل"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:58
+msgid "الفئة"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:59
+msgid "الرسالة"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:61
+msgid "عنوان IP"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:62
+msgid "وكيل المستخدم"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:63 Ed-Tech/curriculum/models.py:16
+#: Ed-Tech/curriculum/models.py:46 Ed-Tech/users/models.py:26
+msgid "تاريخ الإنشاء"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:66
+msgid "سجل النظام"
+msgstr ""
+
+#: Ed-Tech/analytics/models.py:67
+msgid "سجلات النظام"
+msgstr ""
+
+#: Ed-Tech/assessment/admin.py:35
+msgid "معلومات النشاط"
+msgstr ""
+
+#: Ed-Tech/assessment/admin.py:38
+msgid "الإجابات والخيارات"
+msgstr ""
+
+#: Ed-Tech/assessment/admin.py:95
+msgid "نتيجة المحاولة"
+msgstr ""
+
+#: Ed-Tech/assessment/admin.py:140 Ed-Tech/assessment/models.py:184
+msgid "تقدم الطالب"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:128
+msgid "عنوان النشاط"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:129
+msgid "نوع النشاط"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:130
+msgid "السؤال"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:131
+msgid "الخيارات"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:132
+msgid "الإجابة الصحيحة"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:133
+msgid "النقاط"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:134
+msgid "التفسير"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:135
+msgid "الحد الزمني بالثواني"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:136 Ed-Tech/curriculum/models.py:40
+#: Ed-Tech/curriculum/models.py:70
+msgid "الترتيب"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:137 Ed-Tech/curriculum/models.py:15
+#: Ed-Tech/users/models.py:41
+msgid "نشط"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:140
+msgid "نشاط"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:141
+msgid "الأنشطة"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:150
+msgid "إجابة الطالب"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:151
+msgid "إجابة صحيحة"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:152
+msgid "الدرجة"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:153
+msgid "الوقت المستغرق بالثواني"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:154
+msgid "تاريخ المحاولة"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:157
+msgid "محاولة الطالب"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:158
+msgid "محاولات الطلاب"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:177
+msgid "مستوى الإتقان"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:178
+msgid "نسبة الإنجاز"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:179
+msgid "آخر وصول"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:180
+msgid "تاريخ البدء"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:181
+msgid "تاريخ الإكمال"
+msgstr ""
+
+#: Ed-Tech/assessment/models.py:185
+msgid "تقدم الطلاب"
+msgstr ""
+
+#: Ed-Tech/curriculum/admin.py:33
+msgid "الوصف والمظهر"
+msgstr ""
+
+#: Ed-Tech/curriculum/admin.py:70
+msgid "المعلومات التعليمية"
+msgstr ""
+
+#: Ed-Tech/curriculum/admin.py:73
+msgid "الوسائط المتعددة"
+msgstr ""
+
+#: Ed-Tech/curriculum/admin.py:77
+msgid "المعلومات الإضافية"
+msgstr ""
+
+#: Ed-Tech/curriculum/admin.py:122 Ed-Tech/curriculum/models.py:69
+msgid "المحتوى"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:10
+msgid "اسم المادة"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:11 Ed-Tech/users/models.py:24
+msgid "الصف الدراسي"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:12 Ed-Tech/curriculum/models.py:36
+msgid "الوصف"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:13
+msgid "الأيقونة"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:14
+msgid "اللون"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:17 Ed-Tech/curriculum/models.py:47
+#: Ed-Tech/users/models.py:27
+msgid "تاريخ التحديث"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:20
+msgid "مادة"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:21
+msgid "المواد"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:35 Ed-Tech/users/models.py:54
+msgid "العنوان"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:37
+msgid "الهدف التعليمي"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:38
+msgid "المدة بالدقائق"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:39
+msgid "مستوى الصعوبة"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:41
+msgid "الصورة المصغرة"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:42
+msgid "رابط الفيديو"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:43
+msgid "رابط الصوت"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:44
+msgid "منشور"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:50
+msgid "وحدة تعليمية"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:51
+msgid "الوحدات التعليمية"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:67
+msgid "عنوان القسم"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:68
+msgid "نوع المحتوى"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:71
+msgid "البيانات الوصفية"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:74
+msgid "قسم المحتوى"
+msgstr ""
+
+#: Ed-Tech/curriculum/models.py:75
+msgid "أقسام المحتوى"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:32
+msgid "المعلومات الشخصية"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:33
+msgid "المعلومات الأكاديمية"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:34
+msgid "الصلاحيات"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:35
+msgid "تواريخ مهمة"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:68
+msgid "المعلومات المهنية"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:84
+msgid "معلومات ولي الأمر"
+msgstr ""
+
+#: Ed-Tech/users/admin.py:87
+msgid "معلومات إضافية"
+msgstr ""
+
+#: Ed-Tech/users/models.py:20
+msgid "الدور"
+msgstr ""
+
+#: Ed-Tech/users/models.py:21
+msgid "رقم الهاتف"
+msgstr ""
+
+#: Ed-Tech/users/models.py:22
+msgid "صورة الملف الشخصي"
+msgstr ""
+
+#: Ed-Tech/users/models.py:23
+msgid "تاريخ الميلاد"
+msgstr ""
+
+#: Ed-Tech/users/models.py:25
+msgid "المدرسة"
+msgstr ""
+
+#: Ed-Tech/users/models.py:30
+msgid "مستخدم"
+msgstr ""
+
+#: Ed-Tech/users/models.py:31
+msgid "المستخدمين"
+msgstr ""
+
+#: Ed-Tech/users/models.py:38
+msgid "المواد الدراسية"
+msgstr ""
+
+#: Ed-Tech/users/models.py:39
+msgid "سنوات الخبرة"
+msgstr ""
+
+#: Ed-Tech/users/models.py:40
+msgid "المؤهل العلمي"
+msgstr ""
+
+#: Ed-Tech/users/models.py:44
+msgid "ملف المعلم"
+msgstr ""
+
+#: Ed-Tech/users/models.py:45
+msgid "ملفات المعلمين"
+msgstr ""
+
+#: Ed-Tech/users/models.py:52
+msgid "اسم ولي الأمر"
+msgstr ""
+
+#: Ed-Tech/users/models.py:53
+msgid "هاتف ولي الأمر"
+msgstr ""
+
+#: Ed-Tech/users/models.py:55
+msgid "تاريخ التسجيل"
+msgstr ""
+
+#: Ed-Tech/users/models.py:58
+msgid "ملف الطالب"
+msgstr ""
+
+#: Ed-Tech/users/models.py:59
+msgid "ملفات الطلاب"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/paginator.py:54
+msgid "That page contains no results"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:104
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:752
+msgid "Enter a valid URL."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:165
+msgid "Enter a valid integer."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:176
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:259
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:267
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:281
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:289
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:318
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:298
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:319
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:310
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:317
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:353
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:359
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:394
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:403
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:412
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:422
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:440
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:463
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:347
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:470
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:475
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:546
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/core/validators.py:607
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/base.py:1423
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:893
+msgid "and"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/base.py:1425
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:128
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:129
+msgid "This field cannot be null."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be blank."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:131
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:135
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:173
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1094
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1095
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1097
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1147
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1149
+msgid "String (unlimited)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1253
+msgid "Comma-separated integers"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1354
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1358
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1493
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1362
+msgid "Date (without time)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1489
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1497
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1502
+msgid "Date (with time)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1626
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1628
+msgid "Decimal number"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1789
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1793
+msgid "Duration"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1845
+msgid "Email address"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1870
+msgid "File path"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1948
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1950
+msgid "Floating point number"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1990
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:1992
+msgid "Integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2088
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2105
+msgid "Small integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2113
+msgid "IPv4 address"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2144
+msgid "IP address"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2237
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2238
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2240
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2291
+msgid "Positive big integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2306
+msgid "Positive integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2321
+msgid "Positive small integer"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2337
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2373
+msgid "Text"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2448
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2452
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2456
+msgid "Time"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2564
+msgid "URL"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2588
+msgid "Raw binary data"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2653
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py:2655
+msgid "Universally unique identifier"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/files.py:232
+msgid "File"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/files.py:393
+msgid "Image"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:919
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:921
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1212
+msgid "One-to-one relationship"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1269
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1271
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/db/models/fields/related.py:1319
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/boundfield.py:184
+msgid ":?.!"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:467
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:490
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:621
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:622
+msgid "No file was submitted."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:623
+msgid "The submitted file is empty."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:625
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:630
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:694
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:857
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:949
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:1566
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:951
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1070
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:1564
+msgid "Enter a list of values."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1313
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/fields.py:1343
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/forms.py:244
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/forms.py:328
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:484
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:886
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:891
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:898
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:907
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:1338
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:1429
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/models.py:1568
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:463
+msgid "Clear"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:464
+msgid "Currently"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:465
+msgid "Change"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:794
+msgid "Unknown"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:795
+msgid "Yes"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/forms/widgets.py:796
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:874
+msgid "yes,no,maybe"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:904
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:921
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:923
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:925
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:927
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:929
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/template/defaultfilters.py:931
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:73
+msgid "p.m."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:74
+msgid "a.m."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:79
+msgid "PM"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:80
+msgid "AM"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:152
+msgid "midnight"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dateformat.py:154
+msgid "noon"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/text.py:138
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/text.py:323
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/text.py:342
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:64
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:115
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:349
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:7
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: Ed-Tech/venv/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
