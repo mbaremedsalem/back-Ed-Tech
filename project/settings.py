@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework.authtoken',
     'django_extensions',
+    'django_rest_passwordreset',
     
     # Local apps
     'users',
@@ -75,7 +76,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'template')],  # ← AJOUTE ÇA
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -156,9 +157,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# === إعدادات التسجيل الإداري ===
+
+# الكود السري لإنشاء حساب مدير (يجب تغييره في الإنتاج)
+ADMIN_REGISTRATION_SECRET_CODE = os.environ.get(
+    'ADMIN_REGISTRATION_SECRET_CODE', 
+    'AdminSecret123!@#'
+)
+
+# هل يسمح بإنشاء مديرين متعددين؟ (True/False)
+ALLOW_MULTIPLE_ADMINS = os.environ.get('ALLOW_MULTIPLE_ADMINS', 'True') == 'True'
+
+# عناوين IP المسموح بها للتسجيل الإداري (قائمة أو '*')
+ADMIN_REGISTRATION_ALLOWED_IPS = os.environ.get(
+    'ADMIN_REGISTRATION_ALLOWED_IPS', 
+    # '*',
+    '127.0.0.1',
+).split(',')
+
 
 # REST Framework
 REST_FRAMEWORK = {
@@ -186,6 +206,23 @@ SIMPLE_JWT = {
 إضافة إلى settings.py
 """
 
+
+# Configuration pour l'email (exemple avec Gmail)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mbaremedsalemmbare@gmail.com'
+EMAIL_HOST_PASSWORD = 'whba eakr algq ybtr'
+EMAIL_USE_TLS = True
+EMAIL_PORT = '587'
+
+# Configuration django-rest-passwordreset
+DJANGO_REST_PASSWORDRESET_TOKEN_CONFIG = {
+    'CLASS': 'django_rest_passwordreset.tokens.RandomNumberTokenGenerator',
+    'OPTIONS': {
+        'min_number': 10000,
+        'max_number': 99999
+    }
+}
 # إعدادات Admin
 # ADMIN_SITE_HEADER = 'منصة Ed-Tech التعليمية'
 # ADMIN_SITE_TITLE = 'لوحة تحكم المنصة'

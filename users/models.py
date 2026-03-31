@@ -10,6 +10,23 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
+# users/models.py - Ajoutez ce modèle avant la classe User
+
+class Wilaya(models.Model):
+    """
+    Modèle pour les wilayas de Mauritanie
+    """
+    code = models.IntegerField(_('code'), unique=True)
+    name = models.CharField(_('nom'), max_length=100)
+    
+    class Meta:
+        verbose_name = _('ولاية')
+        verbose_name_plural = _('الولايات')
+        ordering = ['code']
+    
+    def __str__(self):
+        return f"{self.code} - {self.name}"
+
 class User(AbstractUser):
     ROLE_CHOICES = (
         ('admin', 'مدير النظام'),
@@ -23,9 +40,22 @@ class User(AbstractUser):
     date_of_birth = models.DateField(_('تاريخ الميلاد'), null=True, blank=True)
     grade = models.IntegerField(_('الصف الدراسي'), null=True, blank=True)
     school = models.CharField(_('المدرسة'), max_length=255, blank=True)
+    # Nouveau champ wilaya
+    wilaya = models.ForeignKey(
+        Wilaya, 
+        on_delete=models.SET_NULL, 
+        verbose_name=_('الولاية'),
+        null=True, 
+        blank=True,
+        related_name='users'
+    )
     created_at = models.DateTimeField(_('تاريخ الإنشاء'), auto_now_add=True)
     updated_at = models.DateTimeField(_('تاريخ التحديث'), auto_now=True)
-    
+        
+    # Champs pour reset password
+    reset_password_token = models.CharField(max_length=100, blank=True, null=True)
+    reset_password_token_created = models.DateTimeField(blank=True, null=True)
+
     class Meta:
         verbose_name = _('مستخدم')
         verbose_name_plural = _('المستخدمين')

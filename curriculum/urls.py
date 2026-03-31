@@ -6,6 +6,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+
+
     # Subjects endpoints
     path('subjects/', views.SubjectListCreateView.as_view(), name='subject-list'),
     path('subjects/<int:pk>/', views.SubjectDetailView.as_view(), name='subject-detail'),
@@ -21,4 +23,5 @@ urlpatterns = [
     
     # Content Sections endpoints
     path('sections/', views.AllContentSectionListView.as_view(), name='all-sections'),
+    path('transcrire/', views.WhisperTranscriptionView.as_view(), name='transcrire-audio'),
 ]

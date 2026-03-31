@@ -15,7 +15,14 @@ class ActivityAdminForm(forms.ModelForm):
         widgets = {
             'question': forms.Textarea(attrs={'rows': 3}),
             'explanation': forms.Textarea(attrs={'rows': 2}),
+            'options': forms.Textarea(attrs={'rows': 3}),  # facultatif, pour JSON lisible
         }
+
+    def clean_options(self):
+        data = self.cleaned_data.get('options')
+        if data in (None, ''):
+            return []  # valeur par défaut si vide
+        return data
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
