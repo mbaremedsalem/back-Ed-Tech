@@ -351,61 +351,61 @@ class AllContentSectionListView(generics.ListAPIView):
 
 
 
-# views.py
-import whisper
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import permissions  # N'oubliez pas d'importer permissions
-import tempfile
-import os
+# # views.py
+# import whisper
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework import status
+# from rest_framework import permissions  # N'oubliez pas d'importer permissions
+# import tempfile
+# import os
 
-class WhisperTranscriptionView(APIView):
-    permission_classes = [permissions.AllowAny]
+# class WhisperTranscriptionView(APIView):
+#     permission_classes = [permissions.AllowAny]
     
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        # Charger le modèle au démarrage
-        self.model = whisper.load_model("base")  # ou "small", "medium", "large"
+#     def __init__(self, **kwargs):
+#         super().__init__(**kwargs)
+#         # Charger le modèle au démarrage
+#         self.model = whisper.load_model("base")  # ou "small", "medium", "large"
     
-    def post(self, request, format=None):
-        audio_file = request.FILES.get('audio_file')
+#     def post(self, request, format=None):
+#         audio_file = request.FILES.get('audio_file')
         
-        if not audio_file:
-            return Response(
-                {"error": "Fichier audio requis"}, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
+#         if not audio_file:
+#             return Response(
+#                 {"error": "Fichier audio requis"}, 
+#                 status=status.HTTP_400_BAD_REQUEST
+#             )
         
-        # Sauvegarder temporairement le fichier
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as tmp_file:
-            for chunk in audio_file.chunks():
-                tmp_file.write(chunk)
-            tmp_path = tmp_file.name
+#         # Sauvegarder temporairement le fichier
+#         with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as tmp_file:
+#             for chunk in audio_file.chunks():
+#                 tmp_file.write(chunk)
+#             tmp_path = tmp_file.name
         
-        try:
-            # SOLUTION 1: Transcription automatique (détection auto de la langue)
-            result = self.model.transcribe(tmp_path)  # Pas de language spécifié
-            transcription = result["text"]
-            detected_language = result["language"]  # Pour vérifier la langue détectée
+#         try:
+#             # SOLUTION 1: Transcription automatique (détection auto de la langue)
+#             result = self.model.transcribe(tmp_path)  # Pas de language spécifié
+#             transcription = result["text"]
+#             detected_language = result["language"]  # Pour vérifier la langue détectée
             
-            return Response(
-                {
-                    "transcript": transcription,
-                    "detected_language": detected_language  # Optionnel: pour déboguer
-                }, 
-                status=status.HTTP_200_OK
-            )
+#             return Response(
+#                 {
+#                     "transcript": transcription,
+#                     "detected_language": detected_language  # Optionnel: pour déboguer
+#                 }, 
+#                 status=status.HTTP_200_OK
+#             )
             
-            # SOLUTION 2: Forcer l'arabe explicitement
-            # result = self.model.transcribe(tmp_path, language="ar")
-            # transcription = result["text"]
+#             # SOLUTION 2: Forcer l'arabe explicitement
+#             # result = self.model.transcribe(tmp_path, language="ar")
+#             # transcription = result["text"]
             
-        except Exception as e:
-            return Response(
-                {"error": str(e)}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-        finally:
-            # Nettoyer le fichier temporaire
-            os.unlink(tmp_path)
+#         except Exception as e:
+#             return Response(
+#                 {"error": str(e)}, 
+#                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
+#             )
+#         finally:
+#             # Nettoyer le fichier temporaire
+#             os.unlink(tmp_path)

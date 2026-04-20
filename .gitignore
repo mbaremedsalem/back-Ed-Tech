@@ -1,0 +1,19 @@
+# Environnement virtuel
+.venv/
+venv/
+
+# Fichiers Python
+__pycache__/
+*.pyc
+
+# Base de données
+*.sqlite3
+
+# Docker (NE PAS ignorer ces fichiers !)
+# Dockerfile        ← Ne pas ignorer
+# docker-compose.yml ← Ne pas ignorer
+# .dockerignore     ← Ne pas ignorer
+
+# Secrets (à ignorer)
+.env
+.env.local

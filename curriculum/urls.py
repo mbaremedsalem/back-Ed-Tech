@@ -23,5 +23,4 @@ urlpatterns = [
     
     # Content Sections endpoints
     path('sections/', views.AllContentSectionListView.as_view(), name='all-sections'),
-    path('transcrire/', views.WhisperTranscriptionView.as_view(), name='transcrire-audio'),
 ]
