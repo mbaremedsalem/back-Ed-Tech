@@ -1,45 +1,29 @@
 """
 analytics/serializers.py
+
+Serializers "de sortie" uniquement : ils mettent en forme des résultats
+de requêtes agrégées, ils ne sont adossés à aucun modèle dédié
+(voir analytics/models.py).
 """
 
 from rest_framework import serializers
-from .models import LearningAnalytics, TeacherDashboard, SystemLog
 
-class LearningAnalyticsSerializer(serializers.ModelSerializer):
-    student_name = serializers.CharField(source='student.get_full_name', read_only=True)
-    
-    class Meta:
-        model = LearningAnalytics
-        fields = [
-            'id', 'student', 'student_name', 'date', 'total_time_spent',
-            'completed_units', 'total_score', 'avg_mastery_level'
-        ]
 
-class TeacherDashboardSerializer(serializers.ModelSerializer):
-    teacher_name = serializers.CharField(source='teacher.get_full_name', read_only=True)
-    
-    class Meta:
-        model = TeacherDashboard
-        fields = [
-            'id', 'teacher', 'teacher_name', 'total_students', 
-            'active_students', 'total_units_created', 
-            'student_engagement_rate', 'avg_student_progress', 
-            'last_updated'
-        ]
+class ClassDashboardRowSerializer(serializers.Serializer):
+    student_id = serializers.IntegerField()
+    username = serializers.CharField()
+    first_name = serializers.CharField()
+    last_name = serializers.CharField()
+    skills_started = serializers.IntegerField()
+    skills_mastered = serializers.IntegerField()
+    average_mastery = serializers.FloatField()
+    last_active = serializers.DateTimeField(allow_null=True)
 
-class SystemLogSerializer(serializers.ModelSerializer):
-    user_name = serializers.CharField(source='user.get_full_name', read_only=True, allow_null=True)
-    
-    class Meta:
-        model = SystemLog
-        fields = [
-            'id', 'level', 'category', 'message', 'user', 'user_name',
-            'ip_address', 'user_agent', 'created_at'
-        ]
 
-class AnalyticsReportSerializer(serializers.Serializer):
-    usage_analytics = serializers.DictField()
-    performance_analytics = serializers.DictField()
-    user_analytics = serializers.DictField()
-    content_analytics = serializers.DictField()
-    generated_at = serializers.DateTimeField()
+class StudentErrorAnalysisRowSerializer(serializers.Serializer):
+    skill_name = serializers.CharField()
+    error_category = serializers.CharField()
+    error_code = serializers.CharField(allow_null=True)
+    root_cause = serializers.CharField(allow_null=True)
+    severity_level = serializers.CharField(allow_null=True)
+    occurrences = serializers.IntegerField()

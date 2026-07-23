@@ -7,7 +7,7 @@ core/management/commands/generate_sample_data.py
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 from django.utils import timezone
-from curriculum.models import Subject, Unit, ContentSection
+from curriculum.models import Subject, Unit, Lesson
 from assessment.models import Activity, StudentAttempt, StudentProgress
 from users.models import TeacherProfile, StudentProfile
 from analytics.models import LearningAnalytics, TeacherDashboard, SystemLog
@@ -91,7 +91,7 @@ class Command(BaseCommand):
         models_to_clear = [
             SystemLog, LearningAnalytics, TeacherDashboard,
             StudentAttempt, StudentProgress, Activity,
-            ContentSection, Unit, Subject,
+            Lesson, Unit, Subject,
             TeacherProfile, StudentProfile, User
         ]
         
@@ -635,7 +635,7 @@ class Command(BaseCommand):
                     content = self.generate_interactive_content()
                     metadata = {'type': 'quiz', 'questions': 3}
                 
-                ContentSection.objects.create(
+                Lesson.objects.create(
                     unit=unit,
                     title=f'القسم {i+1}: {self.get_section_title(section_type, unit.subject.name)}',
                     content_type=section_type,
@@ -1182,7 +1182,7 @@ class Command(BaseCommand):
         self.stdout.write(f'👨‍🎓  الطلاب: {len(students)}')
         self.stdout.write(f'📚  المواد الدراسية: {len(subjects)}')
         self.stdout.write(f'📖  الوحدات التعليمية: {len(units)}')
-        self.stdout.write(f'📄  أقسام المحتوى: {ContentSection.objects.count()}')
+        self.stdout.write(f'📄  أقسام المحتوى: {Lesson.objects.count()}')
         self.stdout.write(f'🎯  الأنشطة: {len(activities)}')
         self.stdout.write(f'📝  محاولات الطلاب: {StudentAttempt.objects.count()}')
         self.stdout.write(f'📊  تقدم الطلاب: {StudentProgress.objects.count()}')

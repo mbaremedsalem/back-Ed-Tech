@@ -47,6 +47,9 @@ urlpatterns = [
     
     # Analytics
     path('api/analytics/', include('analytics.urls')),
+
+    # أضف هذا المسار
+    path('api/skills/', include('skills.urls')),
     
     # Health check
     # path('api/health/', include('health_check.urls')),

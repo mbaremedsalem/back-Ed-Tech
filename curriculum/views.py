@@ -1,411 +1,116 @@
 """
-curriculum/views.py - تحديث الـ Views لتعمل مع path
+curriculum/views.py
 """
 
-from rest_framework import generics, permissions, status
-from rest_framework.views import APIView
+from rest_framework import viewsets, permissions
+from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Q
-from .models import Subject, Unit, ContentSection
-from .serializers import (
-    SubjectSerializer, UnitSerializer, 
-    ContentSectionSerializer, UnitDetailSerializer
-)
+
 from users.models import User
-from assessment.models import StudentProgress
+from .models import Stage, Level, Subject, Unit, Lesson, Goal
+from .serializers import (
+    StageSerializer,
+    LevelSerializer,
+    SubjectSerializer,
+    UnitListSerializer,
+    UnitDetailSerializer,
+    LessonListSerializer,
+    LessonDetailSerializer,
+    GoalSerializer,
+)
 
-# Subjects Views
-# class SubjectListCreateView(generics.ListCreateAPIView):
-#     serializer_class = SubjectSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-    
-#     def get_queryset(self):
-#         return Subject.objects.filter(is_active=True)
-    
-#     def get_permissions(self):
-#         if self.request.method == 'POST':
-#             return [permissions.IsAuthenticated(), permissions.IsAdminUser()]
-#         return [permissions.IsAuthenticated()]
-    
-#     def get(self, request):
-#         subjects = self.get_queryset()
-#         serializer = self.get_serializer(subjects, many=True)
-#         return Response(serializer.data)
-    
-#     def post(self, request):
-#         serializer = self.get_serializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-from rest_framework import generics, permissions, status
-from rest_framework.response import Response
-from .models import Subject
-from .serializers import SubjectSerializer
+class IsTeacherOrAdminOrReadOnly(permissions.BasePermission):
+    """
+    Lecture ouverte à tous les utilisateurs authentifiés.
+    Écriture réservée aux enseignants, admins régionaux et admins.
+    """
 
-class SubjectListCreateView(generics.ListCreateAPIView):
+    def has_permission(self, request, view):
+        if request.method in permissions.SAFE_METHODS:
+            return request.user and request.user.is_authenticated
+        return bool(
+            request.user
+            and request.user.is_authenticated
+            and request.user.role in (User.Role.TEACHER, User.Role.REGIONAL_ADMIN, User.Role.ADMIN)
+        )
+
+
+class StageViewSet(viewsets.ModelViewSet):
+    queryset = Stage.objects.all()
+    serializer_class = StageSerializer
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    search_fields = ['name', 'code']
+
+
+class LevelViewSet(viewsets.ModelViewSet):
+    queryset = Level.objects.select_related('stage').all()
+    serializer_class = LevelSerializer
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    filterset_fields = ['stage']
+    search_fields = ['name', 'code']
+
+
+class SubjectViewSet(viewsets.ModelViewSet):
+    queryset = Subject.objects.select_related('level').all()
     serializer_class = SubjectSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        """Retourne les matières selon le rôle de l'utilisateur"""
-        user = self.request.user
-        base_queryset = Subject.objects.filter(is_active=True)
-        
-        # Si l'utilisateur est admin -> retourne toutes les matières
-        if user.role == 'admin':
-            return base_queryset
-        
-        # Si l'utilisateur est étudiant ou enseignant -> filtre par son grade
-        elif user.role in ['student', 'teacher']:
-            # Vérifier si l'utilisateur a un grade défini
-            if user.grade:
-                return base_queryset.filter(grade=user.grade)
-            else:
-                # Si pas de grade, retourner une liste vide
-                return Subject.objects.none()
-        
-        # Pour tout autre cas
-        return Subject.objects.none()
-    
-    def get_permissions(self):
-        """Permissions personnalisées selon la méthode"""
-        if self.request.method == 'POST':
-            return [permissions.IsAuthenticated(), permissions.IsAdminUser()]
-        return [permissions.IsAuthenticated()]
-    
-    def get(self, request):
-        """GET avec la même structure de réponse que l'ancienne API"""
-        subjects = self.get_queryset()
-        serializer = self.get_serializer(subjects, many=True)
-        # Retourne exactement le même format que l'ancienne API
-        return Response(serializer.data)
-    
-    def post(self, request):
-        """POST avec la même structure de réponse que l'ancienne API"""
-        # Vérifier si l'utilisateur est admin
-        if request.user.role != 'admin' and not request.user.is_superuser:
-            return Response(
-                {'detail': 'Seuls les administrateurs peuvent créer des matières'}, 
-                status=status.HTTP_403_FORBIDDEN
-            )
-        
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            # Retourne exactement le même format que l'ancienne API
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        # Retourne exactement le même format que l'ancienne API
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class SubjectDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Subject.objects.all()
-    serializer_class = SubjectSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_permissions(self):
-        if self.request.method in ['PUT', 'PATCH', 'DELETE']:
-            return [permissions.IsAuthenticated(), permissions.IsAdminUser()]
-        return [permissions.IsAuthenticated()]
-
-class SubjectUnitsView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get(self, request, pk):
-        try:
-            subject = Subject.objects.get(pk=pk, is_active=True)
-        except Subject.DoesNotExist:
-            return Response({'error': 'المادة غير موجودة'}, status=404)
-        
-        units = subject.units.filter(is_published=True)
-        serializer = UnitSerializer(units, many=True, context={'request': request})
-        return Response(serializer.data)
-
-# Units Views
-class UnitListCreateView(generics.ListCreateAPIView):
-    serializer_class = UnitSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        user = self.request.user
-        
-        if user.role == 'student':
-            return Unit.objects.filter(is_published=True)
-        elif user.role == 'teacher':
-            return Unit.objects.filter(
-                Q(is_published=True) | Q(created_by=user)
-            )
-        elif user.role == 'admin':
-            return Unit.objects.all()
-        
-        return Unit.objects.none()
-    
-    def get_permissions(self):
-        if self.request.method == 'POST':
-            return [permissions.IsAuthenticated()]
-        return [permissions.IsAuthenticated()]
-    
-    def get(self, request):
-        units = self.get_queryset()
-        serializer = self.get_serializer(units, many=True)
-        return Response(serializer.data)
-    
-    def post(self, request):
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(created_by=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class UnitDetailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = UnitDetailSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        try:
-            unit = Unit.objects.get(pk=pk)
-            # التحقق من الصلاحيات
-            user = self.request.user
-            if user.role == 'student' and not unit.is_published:
-                raise Unit.DoesNotExist
-            return unit
-        except Unit.DoesNotExist:
-            return None
-    
-    def get(self, request, pk):
-        unit = self.get_object()
-        if not unit:
-            return Response({'error': 'الوحدة غير موجودة أو غير مصرح بالوصول'}, status=404)
-        
-        serializer = self.get_serializer(unit, context={'request': request})
-        return Response(serializer.data)
-    
-    def put(self, request, pk):
-        unit = self.get_object()
-        if not unit:
-            return Response({'error': 'الوحدة غير موجودة'}, status=404)
-        
-        # التحقق من الصلاحيات
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بالتعديل'}, status=403)
-        
-        serializer = self.get_serializer(unit, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    def delete(self, request, pk):
-        unit = self.get_object()
-        if not unit:
-            return Response({'error': 'الوحدة غير موجودة'}, status=404)
-        
-        # التحقق من الصلاحيات
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بالحذف'}, status=403)
-        
-        unit.delete()
-        return Response({'message': 'تم حذف الوحدة بنجاح'}, status=status.HTTP_204_NO_CONTENT)
-
-class UnitPublishView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def post(self, request, pk):
-        try:
-            unit = Unit.objects.get(pk=pk)
-        except Unit.DoesNotExist:
-            return Response({'error': 'الوحدة غير موجودة'}, status=404)
-        
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بالنشر'}, status=403)
-        
-        unit.is_published = True
-        unit.save()
-        
-        return Response({
-            'message': 'تم نشر الوحدة بنجاح',
-            'unit': UnitSerializer(unit).data
-        })
-
-class UnitProgressView(APIView):
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get(self, request, pk):
-        try:
-            unit = Unit.objects.get(pk=pk)
-        except Unit.DoesNotExist:
-            return Response({'error': 'الوحدة غير موجودة'}, status=404)
-        
-        if request.user.role == 'student':
-            progress, created = StudentProgress.objects.get_or_create(
-                student=request.user,
-                unit=unit,
-                defaults={'mastery_level': 'not_started'}
-            )
-            from assessment.serializers import StudentProgressSerializer
-            serializer = StudentProgressSerializer(progress)
-            return Response(serializer.data)
-        
-        return Response({'error': 'غير مصرح'}, status=403)
-
-# Content Sections Views
-class ContentSectionListCreateView(generics.ListCreateAPIView):
-    serializer_class = ContentSectionSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        unit_pk = self.kwargs.get('pk')
-        return ContentSection.objects.filter(unit_id=unit_pk).order_by('order')
-    
-    def get(self, request, pk):
-        sections = self.get_queryset()
-        serializer = self.get_serializer(sections, many=True)
-        return Response(serializer.data)
-    
-    def post(self, request, pk):
-        try:
-            unit = Unit.objects.get(pk=pk)
-        except Unit.DoesNotExist:
-            return Response({'error': 'الوحدة غير موجودة'}, status=404)
-        
-        # التحقق من الصلاحيات
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بإنشاء محتوى'}, status=403)
-        
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(unit=unit)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-class ContentSectionDetailView(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = ContentSectionSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_object(self):
-        unit_pk = self.kwargs.get('pk')
-        section_id = self.kwargs.get('section_id')
-        
-        try:
-            return ContentSection.objects.get(
-                id=section_id,
-                unit_id=unit_pk
-            )
-        except ContentSection.DoesNotExist:
-            return None
-    
-    def get(self, request, pk, section_id):
-        section = self.get_object()
-        if not section:
-            return Response({'error': 'قسم المحتوى غير موجود'}, status=404)
-        
-        serializer = self.get_serializer(section)
-        return Response(serializer.data)
-    
-    def put(self, request, pk, section_id):
-        section = self.get_object()
-        if not section:
-            return Response({'error': 'قسم المحتوى غير موجود'}, status=404)
-        
-        # التحقق من الصلاحيات
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and section.unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بالتعديل'}, status=403)
-        
-        serializer = self.get_serializer(section, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
-    def delete(self, request, pk, section_id):
-        section = self.get_object()
-        if not section:
-            return Response({'error': 'قسم المحتوى غير موجود'}, status=404)
-        
-        # التحقق من الصلاحيات
-        if request.user.role not in ['admin', 'teacher'] or (request.user.role == 'teacher' and section.unit.created_by != request.user):
-            return Response({'error': 'غير مصرح بالحذف'}, status=403)
-        
-        section.delete()
-        return Response({'message': 'تم حذف قسم المحتوى بنجاح'}, status=status.HTTP_204_NO_CONTENT)
-
-class AllContentSectionListView(generics.ListAPIView):
-    serializer_class = ContentSectionSerializer
-    permission_classes = [permissions.IsAuthenticated]
-    
-    def get_queryset(self):
-        user = self.request.user
-        
-        if user.role == 'student':
-            return ContentSection.objects.filter(unit__is_published=True)
-        elif user.role == 'teacher':
-            return ContentSection.objects.filter(
-                Q(unit__is_published=True) | Q(unit__created_by=user)
-            )
-        elif user.role == 'admin':
-            return ContentSection.objects.all()
-        
-        return ContentSection.objects.none()
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    filterset_fields = ['level', 'is_active']
+    search_fields = ['name']
 
 
+class UnitViewSet(viewsets.ModelViewSet):
+    queryset = Unit.objects.select_related('subject', 'created_by').all()
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    filterset_fields = ['subject', 'is_published']
+    search_fields = ['code', 'title', 'central_question']
 
-# views.py
-import whisper
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import permissions  # N'oubliez pas d'importer permissions
-import tempfile
-import os
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return UnitListSerializer
+        return UnitDetailSerializer
 
-class WhisperTranscriptionView(APIView):
-    permission_classes = [permissions.AllowAny]
-    
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        # Charger le modèle au démarrage
-        self.model = whisper.load_model("base")  # ou "small", "medium", "large"
-    
-    def post(self, request, format=None):
-        audio_file = request.FILES.get('audio_file')
-        
-        if not audio_file:
-            return Response(
-                {"error": "Fichier audio requis"}, 
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        
-        # Sauvegarder temporairement le fichier
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.wav') as tmp_file:
-            for chunk in audio_file.chunks():
-                tmp_file.write(chunk)
-            tmp_path = tmp_file.name
-        
-        try:
-            # SOLUTION 1: Transcription automatique (détection auto de la langue)
-            result = self.model.transcribe(tmp_path)  # Pas de language spécifié
-            transcription = result["text"]
-            detected_language = result["language"]  # Pour vérifier la langue détectée
-            
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+
+
+class LessonViewSet(viewsets.ModelViewSet):
+    queryset = Lesson.objects.select_related('unit').prefetch_related('goals').all()
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    filterset_fields = ['unit', 'is_published']
+    search_fields = ['code', 'title']
+
+    def get_serializer_class(self):
+        if self.action == 'list':
+            return LessonListSerializer
+        return LessonDetailSerializer
+
+    @action(detail=True, methods=['post'])
+    def publish(self, request, pk=None):
+        """
+        Publie la leçon après vérification de la règle métier
+        (exactement 1 Goal Conceptual + 1 Goal Operational).
+        """
+        lesson = self.get_object()
+        c = lesson.goals.filter(goal_type=Goal.GoalType.CONCEPTUAL).count()
+        o = lesson.goals.filter(goal_type=Goal.GoalType.OPERATIONAL).count()
+        if c != 1 or o != 1:
             return Response(
                 {
-                    "transcript": transcription,
-                    "detected_language": detected_language  # Optionnel: pour déboguer
-                }, 
-                status=status.HTTP_200_OK
+                    'detail': "Publication refusée : la leçon doit avoir exactement "
+                              "1 Goal Conceptual et 1 Goal Operational.",
+                    'conceptual_count': c,
+                    'operational_count': o,
+                },
+                status=400,
             )
-            
-            # SOLUTION 2: Forcer l'arabe explicitement
-            # result = self.model.transcribe(tmp_path, language="ar")
-            # transcription = result["text"]
-            
-        except Exception as e:
-            return Response(
-                {"error": str(e)}, 
-                status=status.HTTP_500_INTERNAL_SERVER_ERROR
-            )
-        finally:
-            # Nettoyer le fichier temporaire
-            os.unlink(tmp_path)
+        lesson.is_published = True
+        lesson.save()
+        return Response(LessonDetailSerializer(lesson).data)
+
+
+class GoalViewSet(viewsets.ModelViewSet):
+    queryset = Goal.objects.select_related('lesson').all()
+    serializer_class = GoalSerializer
+    permission_classes = [IsTeacherOrAdminOrReadOnly]
+    filterset_fields = ['lesson', 'goal_type']

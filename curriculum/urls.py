@@ -1,27 +1,70 @@
-"""
-curriculum/urls.py
-"""
+# curriculum/urls.py
 
 from django.urls import path
-from . import views
+from .views import (
+    StageViewSet,
+    LevelViewSet,
+    SubjectViewSet,
+    UnitViewSet,
+    LessonViewSet,
+    GoalViewSet,
+)
 
+# On utilise as_view() pour chaque action (list, create, retrieve, update, partial_update, destroy)
 urlpatterns = [
-
-
-    # Subjects endpoints
-    path('subjects/', views.SubjectListCreateView.as_view(), name='subject-list'),
-    path('subjects/<int:pk>/', views.SubjectDetailView.as_view(), name='subject-detail'),
-    path('subjects/<int:pk>/units/', views.SubjectUnitsView.as_view(), name='subject-units'),
+    # Stages
+    path('stages/', StageViewSet.as_view({'get': 'list','post': 'create'}), name='stage-list'),
+    path('stages/<int:pk>/', StageViewSet.as_view({'get': 'retrieve','put': 'update','patch': 'partial_update','delete': 'destroy'}), name='stage-detail'),
     
-    # Units endpoints
-    path('units/', views.UnitListCreateView.as_view(), name='unit-list'),
-    path('units/<int:pk>/', views.UnitDetailView.as_view(), name='unit-detail'),
-    path('units/<int:pk>/publish/', views.UnitPublishView.as_view(), name='unit-publish'),
-    path('units/<int:pk>/progress/', views.UnitProgressView.as_view(), name='unit-progress'),
-    path('units/<int:pk>/sections/', views.ContentSectionListCreateView.as_view(), name='section-list'),
-    path('units/<int:pk>/sections/<int:section_id>/', views.ContentSectionDetailView.as_view(), name='section-detail'),
+    # Levels
+    path('levels/', LevelViewSet.as_view({'get': 'list','post': 'create'}), name='level-list'),
+    path('levels/<int:pk>/', LevelViewSet.as_view({'get': 'retrieve','put': 'update','patch': 'partial_update','delete': 'destroy'}), name='level-detail'),
     
-    # Content Sections endpoints
-    path('sections/', views.AllContentSectionListView.as_view(), name='all-sections'),
-    path('transcrire/', views.WhisperTranscriptionView.as_view(), name='transcrire-audio'),
+    # Subjects
+    path('subjects/', SubjectViewSet.as_view({'get': 'list','post': 'create'}), name='subject-list'),
+    path('subjects/<int:pk>/', SubjectViewSet.as_view({
+        'get': 'retrieve',
+        'put': 'update',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    }), name='subject-detail'),
+    
+    # Units
+    path('units/', UnitViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    }), name='unit-list'),
+    path('units/<int:pk>/', UnitViewSet.as_view({
+        'get': 'retrieve',
+        'put': 'update',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    }), name='unit-detail'),
+    
+    # Lessons
+    path('lessons/', LessonViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    }), name='lesson-list'),
+    path('lessons/<int:pk>/', LessonViewSet.as_view({
+        'get': 'retrieve',
+        'put': 'update',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    }), name='lesson-detail'),
+    path('lessons/<int:pk>/publish/', LessonViewSet.as_view({
+        'post': 'publish'
+    }), name='lesson-publish'),
+    
+    # Goals
+    path('goals/', GoalViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    }), name='goal-list'),
+    path('goals/<int:pk>/', GoalViewSet.as_view({
+        'get': 'retrieve',
+        'put': 'update',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    }), name='goal-detail'),
 ]

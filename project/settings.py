@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
-    'rest_framework_simplejwt',
     'rest_framework.authtoken',
+    'django_filters',
     'django_extensions',
     'django_rest_passwordreset',
     
@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'curriculum',
     'assessment',
     'analytics',
+    'skills',
 ]
 
 MIDDLEWARE = [
@@ -183,10 +184,16 @@ ADMIN_REGISTRATION_ALLOWED_IPS = os.environ.get(
 # REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
@@ -194,12 +201,6 @@ REST_FRAMEWORK = {
 # Custom User Model
 AUTH_USER_MODEL = 'users.User'
 # JWT Settings
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-}
 
 
 """
