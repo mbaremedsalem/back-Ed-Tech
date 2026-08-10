@@ -30,20 +30,24 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+
     # Authentication
     path('api/auth/', include('users.urls')),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     
     # Curriculum
     path('api/curriculum/', include('curriculum.urls')),
     
     # Assessment
     path('api/assessment/', include('assessment.urls')),
+
+    # Decision Engine (Revue de l'API - Problèmes 1, 2, 3)
+    path('api/students/', include('assessment.student_urls')),
     
     # Analytics
     path('api/analytics/', include('analytics.urls')),
